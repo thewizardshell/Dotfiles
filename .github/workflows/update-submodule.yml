@@ -1,0 +1,25 @@
+name: Update Submodule
+
+on:
+  schedule:
+    - cron: "30 17 * * *" # Ejecutar diariamente a las 17:30 UTC (14:30 Chile)
+  workflow_dispatch: # Permite ejecutar el workflow manualmente
+
+jobs:
+  update-submodule:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          submodules: true # Asegura que los submódulos también sean descargados
+
+      - name: Update submodule
+        run: |
+          git submodule update --remote --merge
+          git add .
+          git commit -m "Update submodule"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Necesario para hacer push en el repositorio
