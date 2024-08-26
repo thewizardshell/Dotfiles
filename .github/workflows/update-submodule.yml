@@ -27,6 +27,6 @@ jobs:
           cd .. # Regresar al directorio principal
           git add nvim
           git commit -m "Update submodule" || echo "No changes to commit"
-          git push
+          git push origin master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Usar el token de GitHub Actions
