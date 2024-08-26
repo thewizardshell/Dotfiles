@@ -27,4 +27,4 @@ jobs:
           git commit -m "Update submodule" || echo "No changes to commit"
           git push
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Necesario para hacer push en el repositorio
+          GITHUB_TOKEN: ${{ secrets.PAT }} # Necesario para hacer push en el repositorio
