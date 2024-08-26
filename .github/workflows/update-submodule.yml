@@ -2,7 +2,7 @@ name: Update Submodule
 
 on:
   schedule:
-    #- cron: "30 17 * * *" # Ejecutar diariamente a las 17:30 UTC (14:30 Chile)
+    - cron: "30 17 * * *" # Ejecutar diariamente a las 17:30 UTC (14:30 Chile)
   workflow_dispatch: # Permite ejecutar el workflow manualmente
 
 jobs:
