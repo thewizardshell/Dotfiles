@@ -23,7 +23,7 @@ jobs:
         run: |
           git submodule update --remote # Actualiza el submódulo a la última versión disponible en la rama predeterminada
           cd nvim # Cambia al directorio del submódulo
-          git pull origin master # Realiza un pull en la rama principal del submódulo, ajusta la rama si es necesario
+          git pull origin main # Realiza un pull en la rama principal del submódulo, ajusta la rama si es necesario
           cd .. # Regresa al directorio principal
           git add nvim # Añade el submódulo actualizado al commit
           git commit -m "Update submodule" || echo "No changes to commit"
